@@ -31,6 +31,10 @@ var operator = document.getElementsByClassName("operator");
 for(var i =0;i<operator.length;i++) {
   operator[i].addEventListener('click',function(){
     // alert("The operator clicked:"+this.id);
+    if(this.id=="clear"){
+      printHistory("");
+      printOutput("");
+    }
   });
 }
 var number = document.getElementsByClassName("number");
