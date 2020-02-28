@@ -8,7 +8,14 @@ function getOutput() {
    return document.getElementById("output-value").innerText;
 }
 function printOutput(num) {
- document.getElementById("output-value").innerText=getFormattedNumber(num);
+ // document.getElementById("output-value").innerText=getFormattedNumber(num);
+ if(num=="") {
+   document.getElementById("output-value").innerText=num;
+ }
+ else {
+document.getElementById("output-value").innerText=getFormattedNumber(num);
+ }
+
 }
 function getFormattedNumber(num) {
   var n = Number(num);
@@ -16,3 +23,4 @@ function getFormattedNumber(num) {
   return value;
 }
 // printOutput("9999");
+printOutput("9847543");
