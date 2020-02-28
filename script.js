@@ -23,4 +23,25 @@ function getFormattedNumber(num) {
   return value;
 }
 // printOutput("9999");
-printOutput("9847543");
+// printOutput("9847543");
+function reverseNumberFormat(num) {
+  return Number(num.replace(/,/g,''));
+}
+var operator = document.getElementsByClassName("operator");
+for(var i =0;i<operator.length;i++) {
+  operator[i].addEventListener('click',function(){
+    // alert("The operator clicked:"+this.id);
+  });
+}
+var number = document.getElementsByClassName("number");
+for(var i =0;i<operator.length;i++) {
+  number[i].addEventListener('click',function(){
+    // alert("The number clicked:"+this.id);
+    var output=reverseNumberFormat(getOutput());
+    if(output!=NaN){  // if output is a number
+        output=output+this.id;
+        printOutput(output);
+    }
+  });
+}
+// alert(reverseNumberFormat(getOutput()));
