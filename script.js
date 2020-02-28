@@ -35,6 +35,14 @@ for(var i =0;i<operator.length;i++) {
       printHistory("");
       printOutput("");
     }
+
+    else if(this.id=="backspace"){
+      var output=reverseNumberFormat(getOutput()).toString();
+      if(output){  //if outputhas a value
+        output= output.substr(0,output.length-1);
+        printOutput(output);
+      }
+    }
   });
 }
 var number = document.getElementsByClassName("number");
