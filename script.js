@@ -18,6 +18,9 @@ document.getElementById("output-value").innerText=getFormattedNumber(num);
 
 }
 function getFormattedNumber(num) {
+  if(num=="-"){
+    return "";
+  }
   var n = Number(num);
   var value = n.toLocaleString("en");
   return value;
@@ -46,9 +49,24 @@ for(var i =0;i<operator.length;i++) {
     else {
       var output=getOutput();
       var history=getHistory();
+      if(output==""&&history!=""){
+        if(isNaN(history[history.length-1])){
+          history= history.substr(0,history.length-1);
+        }
+      }
       if(output!=""){
         output=reverseNumberFormat(output);
-        
+        history=history+output;
+        if(this.id=="="){
+          var result=eval(history);
+          printOutput(result);
+          printHistory("");
+   }
+   else {
+     history=history+this.id;
+     printHistory(history);
+     printOutput("");
+   }
       }
     }
   });
