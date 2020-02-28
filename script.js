@@ -43,6 +43,14 @@ for(var i =0;i<operator.length;i++) {
         printOutput(output);
       }
     }
+    else {
+      var output=getOutput();
+      var history=getHistory();
+      if(output!=""){
+        output=reverseNumberFormat(output);
+        
+      }
+    }
   });
 }
 var number = document.getElementsByClassName("number");
